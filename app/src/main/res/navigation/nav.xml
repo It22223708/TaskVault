@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.taskvault.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment2_to_addTaskFragment3"
+            app:destination="@id/addTaskFragment3" />
+        <action
+            android:id="@+id/action_homeFragment2_to_editTaskFragment2"
+            app:destination="@id/editTaskFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTaskFragment3"
+        android:name="com.example.taskvault.fragments.AddTaskFragment"
+        android:label="AddTaskFragment" >
+        <action
+            android:id="@+id/action_addTaskFragment3_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment2"
+        android:name="com.example.taskvault.fragments.EditTaskFragment"
+        android:label="EditTaskFragment" >
+        <action
+            android:id="@+id/action_editTaskFragment2_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+
+        <argument
+            android:name="task"
+            app:argType="com.example.taskvault.model.Task"
+            app:nullable="true"/>
+    </fragment>
+</navigation>
